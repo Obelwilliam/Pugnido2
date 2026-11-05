@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#075b32">
+  <meta name="description" content="Download the Pugnido 2 Football Android app. Follow live scores, fixtures, results and football news.">
+  <title>Pugnido 2 Football — Download App</title>
+  <link rel="icon" href="assets/app-icon.png" type="image/png">
+  <style>
+    :root {
+      --green: #086238;
+      --green-dark: #064526;
+      --green-soft: #e8f3ec;
+      --ink: #10251a;
+      --muted: #63736a;
+      --line: #dce7df;
+      --white: #fff;
+      --page: #f4f8f5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--page);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .topbar {
+      background: #07150e; color: #fff; padding: 13px 20px;
+      border-bottom: 4px solid #19a6c5;
+    }
+    .nav {
+      max-width: 1080px; margin: auto; display: flex; align-items: center;
+      gap: 13px;
+    }
+    .nav img { width: 48px; height: 48px; object-fit: cover; border-radius: 12px; }
+    .brand { font-weight: 900; letter-spacing: .4px; font-size: 17px; }
+    .nav small { display: block; color: #b8c9bf; font-size: 11px; font-weight: 500; margin-top: 2px; }
+    .hero {
+      max-width: 1080px; margin: auto; padding: 58px 22px 46px;
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 46px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px;
+      background: var(--green-soft); color: var(--green); border-radius: 99px;
+      font-size: 12px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase;
+    }
+    h1 { font-size: clamp(38px, 6vw, 66px); line-height: .98; margin: 20px 0 17px; letter-spacing: -2.4px; }
+    h1 span { color: var(--green); }
+    .intro { color: var(--muted); font-size: 17px; line-height: 1.7; max-width: 540px; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 27px; }
+    .download {
+      display: inline-flex; align-items: center; justify-content: center; gap: 11px;
+      min-height: 56px; padding: 0 24px; background: var(--green); color: white;
+      border-radius: 14px; text-decoration: none; font-size: 16px; font-weight: 850;
+      box-shadow: 0 9px 22px rgba(8,98,56,.18); transition: .2s ease;
+    }
+    .download:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .download svg { width: 21px; height: 21px; }
+    .file-note { color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .preview-wrap { display: flex; justify-content: center; position: relative; }
+    .preview {
+      width: min(100%, 330px); max-height: 690px; object-fit: cover; object-position: top;
+      border: 9px solid #101713; border-radius: 30px;
+      box-shadow: 0 25px 65px rgba(16,37,26,.2);
+    }
+    .section { max-width: 1080px; margin: auto; padding: 10px 22px 54px; }
+    .section h2 { font-size: 27px; margin: 0 0 20px; letter-spacing: -.7px; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .feature {
+      background: white; border: 1px solid var(--line); border-radius: 18px;
+      padding: 22px; min-height: 145px;
+    }
+    .feature .symbol { font-size: 25px; }
+    .feature h3 { margin: 12px 0 6px; font-size: 17px; }
+    .feature p { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0; }
+    .download-panel {
+      background: var(--green-dark); color: white; border-radius: 22px;
+      padding: 30px; display: flex; justify-content: space-between; align-items: center; gap: 22px;
+    }
+    .download-panel h2 { margin: 0 0 8px; }
+    .download-panel p { color: #d1e2d7; margin: 0; font-size: 14px; line-height: 1.6; }
+    .download-panel .download { background: white; color: var(--green-dark); white-space: nowrap; box-shadow: none; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .step { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+    .number { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-weight: 900; }
+    .step h3 { margin: 13px 0 6px; font-size: 16px; }
+    .step p { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0; }
+    footer { padding: 25px 20px; text-align: center; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 42px; gap: 34px; }
+      .hero-copy { text-align: center; }
+      .intro { margin-left: auto; margin-right: auto; }
+      .actions { justify-content: center; }
+      .preview { width: min(78%, 300px); }
+      .features, .steps { grid-template-columns: 1fr; }
+      .download-panel { align-items: flex-start; flex-direction: column; }
+      h1 { letter-spacing: -1.5px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav">
+      <img src="assets/app-icon.png" alt="Pugnido 2 Football app icon">
+      <div class="brand">PUGNIDO 2 FOOTBALL<small>YOUR FOOTBALL, ONE PLACE</small></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">⚽ Official Android app</div>
+        <h1>Stay close to <span>the game.</span></h1>
+        <p class="intro">Follow the action with Pugnido 2 Football. Keep up with live scores, upcoming fixtures, match results and the latest football news in one place.</p>
+        <div class="actions">
+          <a class="download" href="downloads/app4237070-4qa57x.apk" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download APK
+          </a>
+          <div class="file-note"><strong>APK • 33.80 MB</strong><br>File: app4237070-4qa57x.apk</div>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <img class="preview" src="assets/app-preview.jpg" alt="Preview of the Pugnido 2 Football Android app">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Everything football, in one app</h2>
+      <div class="features">
+        <article class="feature"><div class="symbol">🔴</div><h3>Live scores</h3><p>Keep track of live match action and score updates.</p></article>
+        <article class="feature"><div class="symbol">📅</div><h3>Fixtures</h3><p>See upcoming matches and know what is coming next.</p></article>
+        <article class="feature"><div class="symbol">🏆</div><h3>Results & news</h3><p>Catch up on completed matches and football updates.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="download-panel">
+        <div><h2>Ready to get started?</h2><p>Download the Android APK and install Pugnido 2 Football on your phone.</p></div>
+        <a class="download" href="downloads/app4237070-4qa57x.apk" download>⬇ Download APK</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How to install</h2>
+      <div class="steps">
+        <article class="step"><div class="number">1</div><h3>Download</h3><p>Tap the Download APK button and wait for the file to finish downloading.</p></article>
+        <article class="step"><div class="number">2</div><h3>Allow installation</h3><p>If Android asks, allow your browser or file manager to install apps from this source.</p></article>
+        <article class="step"><div class="number">3</div><h3>Install & open</h3><p>Open the downloaded APK, tap Install, then launch Pugnido 2 Football.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Pugnido 2 Football. All rights reserved.</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
